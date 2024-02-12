@@ -1,1 +1,103 @@
-test site
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Красивая страница</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #1a1a1a; /* Темный фон */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif; /* Улучшенный шрифт */
+    }
+    
+    .container {
+        background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%); /* Переливающийся фон */
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.5); /* Белая тень */
+        transition: box-shadow 0.3s ease;
+        max-width: 400px;
+    }
+    
+    .container:hover {
+        box-shadow: 0px 0px 40px 0px rgba(255, 255, 255, 0.8); /* Более яркая тень при наведении */
+    }
+    
+    .content {
+        color: #fff;
+    }
+
+    .category {
+        margin-bottom: 20px;
+    }
+
+    .category button {
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        text-decoration: underline;
+        font-size: 16px;
+    }
+
+    .category-content {
+        display: none;
+    }
+
+    .category-content.show {
+        display: block;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Поддержка CatFlasher:</h1>
+            <div class="category">
+                <button onclick="toggleVisibility('card')">1. Переводы по номеру карты </button>
+                <div id="card" class="category-content">
+                    <p><img src="visa.png" alt="VISA картинка" style="max-width: 20px;">Карта VISA Belarusbank BYN(Лучше всего сюда) - 4255190131002266</p>
+                    <p><img src="visa.png" alt="VISA картинка" style="max-width: 20px;">/<img src="mastercard.png" alt="Mastercard картинка" style="max-width: 20px;">REVOLUT EUR - неизвестно когда появится и какая платежная система будет</p>
+                </div>
+            </div>
+            <div class="category">
+                <button onclick="toggleVisibility('crypto')">2. Криптовалюта</button>
+                <div id="crypto" class="category-content">
+                    <p>cryptobot счет - нажмите <a href="https://t.me/send?start=IV57FjfPbUAG">здесь</a></p>
+                    <p>Tonkeeper - UQCtV9qrFyczq9vpi58ca30s0pWjIWEGH91bnrmcPD9U6mp5</p>
+                </div>
+            </div>
+            <div class="category">
+                <button onclick="toggleVisibility('yoomoney')">3. Yoomoney</button>
+                <div id="yoomoney" class="category-content">
+                    <p>Yoomoney ID - 4100118472057526</p>
+                    <p>Yoomoney счет 350 рублей - <a href="https://yoomoney.ru/bill/pay/BZfNkwHViR8.231213">ссылка</a></p>
+                    <p>Счет сумму укажите сами(Оплата любыми картами РФ или с кошелька Yoomoney) - <a href="https://yoomoney.ru/to/4100118472057526/1">ссылка</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function toggleVisibility(id) {
+        var element = document.getElementById(id);
+        if (element.classList.contains('show')) {
+            element.classList.remove('show');
+        } else {
+            element.classList.add('show');
+        }
+    }
+</script>
+</body>
+</html>
